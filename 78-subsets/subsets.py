@@ -4,7 +4,7 @@ class Solution:
         subset = []
 
         def backtrack(i):
-            if i >= len(nums):
+            if i == len(nums):
                 res.append(subset[:])
                 return
             
