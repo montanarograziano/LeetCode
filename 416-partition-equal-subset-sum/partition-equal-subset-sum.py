@@ -9,6 +9,8 @@ class Solution:
         for i in range(len(nums) -1, -1, -1):
             next_dp = set()
             for n in dp:
+                if (nums[i] + n) == target:
+                    return True
 
                 next_dp.add(nums[i] + n)
                 next_dp.add(n)
