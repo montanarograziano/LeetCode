@@ -1,8 +1,5 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        if amount == 0:
-            return 1
-        
         cache = {}
 
         def dfs(i, a):
