@@ -5,22 +5,28 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    res = 0
     def countNodes(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
 
-        def dfs(root):
-            if not root:
-                return
+        def count_left(root):
+            height = 0
+            while root:
+                height += 1
+                root = root.left
+            return height
 
-            self.res += 1
-            if root.left:
-                dfs(root.left)
-            if root.right:
-                dfs(root.right)
-            return
+        def count_right(root):
+            height = 0
+            while root:
+                height += 1
+                root = root.right
+            return height
         
-        dfs(root)
-        return self.res
-
+            
+        l = count_left(root)
+        r = count_right(root)
+        if l == r:
+            return 2 ** l - 1
+        
+        return self.countNodes(root.left) + self.countNodes(root.right) + 1
