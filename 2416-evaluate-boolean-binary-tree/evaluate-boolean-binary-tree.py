@@ -6,7 +6,6 @@
 #         self.right = right
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
-        res = False
         def dfs(root):
             if not root.left and not root.right:
                 return root.val
