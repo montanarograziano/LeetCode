@@ -15,7 +15,7 @@ class Solution:
         left, right = 0, max(houses[-1], heaters[-1])
         
         while left < right:
-            mid = (right + left) // 2
+            mid = left + (right - left) // 2
             if can_cover_all(mid):
                 right = mid
             else:
