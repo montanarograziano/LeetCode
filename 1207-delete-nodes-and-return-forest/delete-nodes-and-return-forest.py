@@ -9,6 +9,7 @@ class Solution:
         if not root:
             return []
         res = []
+        to_delete = set(to_delete)
         if root.val not in to_delete:
             res.append(root)
         def dfs(root, parent):
