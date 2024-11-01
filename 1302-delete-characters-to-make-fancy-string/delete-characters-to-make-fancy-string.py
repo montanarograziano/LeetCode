@@ -1,17 +1,9 @@
 class Solution:
     def makeFancyString(self, s: str) -> str:
         res = ""
-        cnt = 0
-        last = ""
         for c in s:
-            if c == last:
-                cnt += 1           
-            else:
-                cnt = 0
-            if cnt < 2:
+            if len(res) < 2 or not (res[-1] == c and res[-2] == c):
                 res += c
-            last = c
-        
         return res
             
 
