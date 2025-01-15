@@ -6,6 +6,6 @@ class Solution:
                 num1 = num1 & (num1 - 1)
         else:
             for _ in range(b - a):
-                num1 = ~(~num1 & (~num1 - 1))
+                num1 = num1 | (num1 + 1)
         return num1
         
