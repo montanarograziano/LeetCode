@@ -1,7 +1,5 @@
 class Solution:
     def firstCompleteIndex(self, arr: List[int], mat: List[List[int]]) -> int:
-        max_row = 0
-        max_col = 0
         ROWS, COLS = len(mat), len(mat[0])
         f_row = [0] * ROWS
         f_cols = [0] * COLS
@@ -14,8 +12,6 @@ class Solution:
             r, c = mapping[n]
             f_row[r] += 1
             f_cols[c] += 1
-            max_row = max(max_row, f_row[r])
-            max_col =  max(max_col, f_cols[c])
-            if max_row == COLS or max_col == ROWS:
+            if f_row[r] == COLS or f_cols[c] == ROWS:
                 return i
         
