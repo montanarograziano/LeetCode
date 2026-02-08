@@ -1,0 +1,11 @@
+# Last updated: 08/02/2026, 14:27:55
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        i = 0
+        while num != 0:
+            if num%2 == 0:
+                num /= 2
+            else:
+                num -= 1
+            i += 1
+        return i
