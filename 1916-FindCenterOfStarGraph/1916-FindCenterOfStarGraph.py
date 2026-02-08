@@ -1,0 +1,12 @@
+# Last updated: 08/02/2026, 14:27:10
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        graph = defaultdict(list)
+        for u, v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
+        
+        for k, v in graph.items():
+            if len(v) > 1:
+                return k
+        
